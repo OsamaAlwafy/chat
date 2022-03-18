@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+    <link href="home.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+     <div class="container">  
+    <div id="app">
+        <div>
+          
+        <h2 class="center">Chat app</h2>
+        </div>
+    <div class="optoin">
+       <button id="join"> join </button>
+       <button id="dissjoin"> disjoin </button>
+    </div>
+        <!-- Chat messages will be appended inside this container -->
+        <div id="chatContainer"></div>
+  
+        <!-- Form to enter and submit new chat messages -->
+        <div class="center">
+          <form id="messageForm">
+            <input class="input center" type="text" id="messageInput" />
+            <button class="btn" type="submit" id="sendBtn">Send!</button>
+            <button class="btn" type="" id="disjoin">disjoin!</button>
+          </form>
+        </div>
+      </div>
+      <div class="list-user">
+        <h2 class="center">List User</h2>
+        <div id="list">
+           
+           </div>
+      </div>
+      </div>
+    <script src="home.js"></script>
+    <!-- <script>
+        const appSocket=io("http://localhost:3000");
+        appSocket.on("connection",()=>{
+
+        });
+        var btn=document.getElementById("sendBTN");
+        var msgTXT=document.getElementById("userMSG");
+        var chatDiv=document.getElementById("chatContent");
+        btn.addEventListener('click',sendToServer);
+
+        appSocket.on("message",(serverMessage)=>{
+            chatDiv.innerHTML+=("<p style='background-color:#ccc;color:black'>"+serverMessage+"</p>");
+            //alert(serverMessage);
+        });
+
+
+        function sendToServer(){
+            chatDiv.innerHTML+=("<p style='background-color:blue;color:white'>"+msgTXT.value+"</p>");
+           
+           // alert(msgTXT.value);
+            appSocket.emit("message",msgTXT.value);
+            msgTXT.value="";
+
+          
+
+        }
+
+
+    </script> -->
+</body>
+</html>
